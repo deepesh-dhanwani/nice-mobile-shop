@@ -18,14 +18,36 @@ export default function App() {
 
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
-  const [shopInfo, setShopInfo] = useState({
-    shop_name: 'Nice Mobile Bhilwara',
-    owner_name: 'Vijay Chandak',
-    phone_primary: '88905 21023',
-    phone_secondary: '094144 44908',
-    address: 'Love Kush Vyayamshala Ke Pass, Pansal Rd, Jawahar Nagar, Labour Colony, Bhilwara, Rajasthan 311001',
-    timing: '9:00 AM - 9:00 PM (Monday to Saturday)'
+  const [shopInfo, setShopInfo] = useState(() => {
+    try {
+      const saved = localStorage.getItem('nice_shop_settings');
+      if (saved) return JSON.parse(saved);
+    } catch {}
+    return {
+      shop_name: 'Nice Mobile Bhilwara',
+      owner_name: 'Vijay Chandak',
+      phone_primary: '88905 21023',
+      phone_secondary: '094144 44908',
+      address: 'Love Kush Vyayamshala Ke Pass, Pansal Rd, Jawahar Nagar, Labour Colony, Bhilwara, Rajasthan 311001',
+      timing: '9:00 AM - 9:00 PM (Monday to Saturday)',
+      logo_url: '/logo.png'
+    };
   });
+
+  // Keep browser upper tab icon (favicon) and title in sync with shop logo
+  useEffect(() => {
+    const favicon = document.getElementById('favicon-link');
+    if (favicon) {
+      favicon.href = shopInfo.logo_url || '/logo.png';
+    }
+    const appleIcon = document.querySelector('link[rel="apple-touch-icon"]');
+    if (appleIcon) {
+      appleIcon.href = shopInfo.logo_url || '/logo.png';
+    }
+    if (shopInfo.shop_name) {
+      document.title = `${shopInfo.shop_name} | Mobile & Laptop Repair, Accessories, E-Mitra | Bhilwara`;
+    }
+  }, [shopInfo.logo_url, shopInfo.shop_name]);
 
   // Cart State (Persisted in localStorage)
   const [cartItems, setCartItems] = useState(() => {
@@ -58,18 +80,26 @@ export default function App() {
   const loadStoreData = async () => {
     try {
       const [catRes, prodRes, infoRes] = await Promise.all([
-        fetch('/api/categories'),
-        fetch('/api/products'),
-        fetch('/api/shop/info')
+        fetch('/api/categories').catch(() => null),
+        fetch('/api/products').catch(() => null),
+        fetch('/api/shop/info').catch(() => null)
       ]);
 
-      const catData = await catRes.json();
-      const prodData = await prodRes.json();
-      const infoData = await infoRes.json();
-
-      if (catData.success) setCategories(catData.categories);
-      if (prodData.success) setProducts(prodData.products);
-      if (infoData.success) setShopInfo(infoData.settings);
+      if (catRes && catRes.ok) {
+        const catData = await catRes.json();
+        if (catData.success && catData.categories?.length) setCategories(catData.categories);
+      }
+      if (prodRes && prodRes.ok) {
+        const prodData = await prodRes.json();
+        if (prodData.success && prodData.products?.length) setProducts(prodData.products);
+      }
+      if (infoRes && infoRes.ok) {
+        const infoData = await infoRes.json();
+        if (infoData.success && infoData.settings) {
+          setShopInfo(prev => ({ ...prev, ...infoData.settings }));
+          localStorage.setItem('nice_shop_settings', JSON.stringify(infoData.settings));
+        }
+      }
     } catch (err) {
       console.error('Error fetching initial shop data:', err);
     }

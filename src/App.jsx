@@ -8,6 +8,7 @@ import EMitraServices from './components/EMitraServices';
 import CartDrawer from './components/CartDrawer';
 import LocationAndContact from './components/LocationAndContact';
 import AdminPanel from './components/AdminPanel';
+import GlitterCursor from './components/GlitterCursor';
 import { MapPin } from 'lucide-react';
 
 export default function App() {
@@ -139,22 +140,26 @@ export default function App() {
   // IF CURRENT VIEW IS STANDALONE ADMIN PAGE
   if (currentView === 'admin') {
     return (
-      <AdminPanel 
-        onBackToStore={() => {
-          setCurrentView('store');
-          window.history.pushState({}, '', '/');
-        }}
-        onRefreshData={loadStoreData}
-        categories={categories}
-        products={products}
-        shopInfo={shopInfo}
-      />
+      <>
+        <GlitterCursor />
+        <AdminPanel 
+          onBackToStore={() => {
+            setCurrentView('store');
+            window.history.pushState({}, '', '/');
+          }}
+          onRefreshData={loadStoreData}
+          categories={categories}
+          products={products}
+          shopInfo={shopInfo}
+        />
+      </>
     );
   }
 
   // CUSTOMER STOREFRONT VIEW
   return (
     <div className="app-container">
+      <GlitterCursor />
       {/* Header & Navigation */}
       <Navbar 
         cartCount={totalCartCount}

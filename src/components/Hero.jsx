@@ -30,7 +30,7 @@ export default function Hero({ onOpenRepairModal, onScrollToProducts, shopInfo }
           </div>
 
           <h1 className="hero-title">
-            Nice Mobile Shop <br />
+            Nice Mobile Bhilwara <br />
             <span className="gradient-text">Repair & Accessories</span>
           </h1>
 

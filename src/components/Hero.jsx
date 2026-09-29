@@ -363,6 +363,39 @@ export default function Hero({ onOpenRepairModal, onScrollToProducts, shopInfo }
             grid-template-columns: 1fr;
           }
         }
+
+        @media (max-width: 600px) {
+          .hero-section {
+            padding: 24px 14px 20px;
+          }
+          .hero-title {
+            font-size: clamp(1.8rem, 8vw, 2.2rem);
+            line-height: 1.25;
+            margin-bottom: 12px;
+          }
+          .hero-description {
+            font-size: 0.92rem;
+            line-height: 1.5;
+            margin-bottom: 20px;
+          }
+          .hero-cta-group {
+            flex-direction: column;
+            width: 100%;
+            gap: 10px;
+          }
+          .hero-btn {
+            width: 100%;
+            padding: 12px 18px;
+            font-size: 0.95rem;
+          }
+          .store-card {
+            padding: 18px;
+          }
+          .phone-numbers {
+            font-size: 0.95rem;
+            flex-wrap: wrap;
+          }
+        }
       `}</style>
     </section>
   );

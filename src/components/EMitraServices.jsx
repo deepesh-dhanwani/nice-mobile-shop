@@ -48,7 +48,7 @@ export default function EMitraServices({ shopPhone = '094144 44908' }) {
             <Sparkles size={14} /> AUTHORIZED E-MITRA CENTER
           </div>
           <h2>Rajasthan Govt. E-Mitra & Digital Services</h2>
-          <p>Complete all your government forms, identity cards, bill payments, and money transfer work right here at Nice Mobile Shop Bhilwara.</p>
+          <p>Complete all your government forms, identity cards, bill payments, and money transfer work right here at Nice Mobile Bhilwara.</p>
         </div>
 
         <div className="emitra-services-grid">

@@ -247,7 +247,7 @@ export default function GlitterCursor() {
         right: 0,
         bottom: 0,
         width: '100vw',
-        height: '100dvh',
+        height: '100vh',
         pointerEvents: 'none',
         zIndex: 999999
       }}

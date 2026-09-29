@@ -38,15 +38,12 @@ export default function Navbar({
 
   return (
     <header className="sticky-header">
-      {/* Top Announcement Ticker - Continuous Radio / Breaking Notice Marquee */}
+      {/* Top Announcement Ticker - Continuous Radio / Alert Marquee */}
       <div className="ticker-banner">
-        <div className="ticker-badge">
-          <span className="live-dot"></span> NOTICE
-        </div>
         <div className="ticker-track-wrapper">
           <div className="ticker-track">
-            <span className="ticker-text">{announcement} • 📞 Call Vijay Ji: <strong>{phonePrimary}</strong> • 📍 Love Kush Vyayamshala Ke Pass, Pansal Rd, Bhilwara • ⚡ Mobile &amp; Laptop Repairing Done in 30 Mins!</span>
-            <span className="ticker-text" aria-hidden="true">{announcement} • 📞 Call Vijay Ji: <strong>{phonePrimary}</strong> • 📍 Love Kush Vyayamshala Ke Pass, Pansal Rd, Bhilwara • ⚡ Mobile &amp; Laptop Repairing Done in 30 Mins!</span>
+            <span className="ticker-text">🔥 {announcement} • 📞 Call Vijay Ji: <strong>{phonePrimary}</strong> • 📍 Love Kush, Vyayamsala Ke Pass, Pansal Rd, Bhilwara • ⚡ Mobile &amp; Laptop Repairing Done in 30 Mins!</span>
+            <span className="ticker-text" aria-hidden="true">🔥 {announcement} • 📞 Call Vijay Ji: <strong>{phonePrimary}</strong> • 📍 Love Kush, Vyayamsala Ke Pass, Pansal Rd, Bhilwara • ⚡ Mobile &amp; Laptop Repairing Done in 30 Mins!</span>
           </div>
         </div>
       </div>
@@ -204,9 +201,10 @@ export default function Navbar({
         }
 
         .nav-wrapper {
-          max-width: 1280px;
+          max-width: 1600px;
+          width: 100%;
           margin: 0 auto;
-          padding: 10px 20px;
+          padding: 10px clamp(12px, 3vw, 40px);
           display: flex;
           align-items: center;
           justify-content: space-between;

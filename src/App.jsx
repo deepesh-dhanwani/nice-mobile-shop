@@ -294,12 +294,12 @@ export default function App() {
         }
 
         .footer-content {
-          max-width: 1280px;
-          margin: 0 auto;
+          max-width: 1600px;
+          width: 100%;
+          margin: 0 auto 40px;
           display: grid;
           grid-template-columns: 1.5fr 1fr 1fr;
           gap: 40px;
-          margin-bottom: 40px;
         }
 
         .footer-logo-img {
@@ -365,7 +365,8 @@ export default function App() {
         }
 
         .footer-bottom {
-          max-width: 1280px;
+          max-width: 1600px;
+          width: 100%;
           margin: 0 auto;
           padding-top: 20px;
           border-top: 1px solid var(--border-color);

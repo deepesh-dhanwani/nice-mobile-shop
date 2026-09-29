@@ -150,9 +150,10 @@ export default function Hero({ onOpenRepairModal, onScrollToProducts, shopInfo }
 
       <style>{`
         .hero-section {
-          max-width: 1280px;
+          max-width: 1600px;
+          width: 100%;
           margin: 0 auto;
-          padding: 50px 20px 70px;
+          padding: 50px clamp(12px, 3vw, 40px) 70px;
           position: relative;
         }
 

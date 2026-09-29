@@ -289,11 +289,12 @@ button {
   box-shadow: 0 6px 18px rgba(16, 185, 129, 0.45);
 }
 
-/* Section Wrapper */
+/* Section Wrapper - Full-Bleed Immersive Width */
 .section-wrapper {
-  max-width: 1280px;
+  max-width: 1600px;
+  width: 100%;
   margin: 0 auto;
-  padding: 50px 20px;
+  padding: 48px clamp(12px, 3vw, 40px);
 }
 
 .section-header {

@@ -11,14 +11,14 @@ import {
 } from 'lucide-react';
 
 export default function LocationAndContact({ shopInfo }) {
-  const phonePrimary = shopInfo?.phone_primary || '094144 44908';
-  const phoneSecondary = shopInfo?.phone_secondary || '88905 21023';
+  const phonePrimary = shopInfo?.phone_primary || '88905 21023';
+  const phoneSecondary = shopInfo?.phone_secondary || '094144 44908';
   const ownerName = shopInfo?.owner_name || 'Vijay Chandak';
-  const address = shopInfo?.address || 'Love Kush Vyayamshala Ke Pass, Pansal Rd, Jawahar Nagar, Labour Colony, Bhilwara, Rajasthan 311001';
-  const mapsUrl = shopInfo?.maps_url || 'https://maps.google.com/maps?q=Nice+Mobile+Bhilwara+Pansal+Road+Bhilwara';
+  const address = shopInfo?.address || 'Love kush, NICE MOBILE BHILWARA, vyayamsala ke pass, Pansal Rd, Jawahar Nagar, Labour Colony, Bhilwara, Rajasthan 311001';
+  const mapsUrl = 'https://maps.google.com/maps?q=' + encodeURIComponent('Love kush, vyayamsala ke pass, Pansal Rd, Jawahar Nagar, Labour Colony, Bhilwara, Rajasthan 311001');
   const timing = shopInfo?.timing || '9:00 AM - 9:00 PM (Monday to Saturday)';
 
-  const mapEmbedSrc = "https://maps.google.com/maps?q=Pansal+Road+Jawahar+Nagar+Bhilwara+Rajasthan+311001&t=&z=16&ie=UTF-8&iwloc=&output=embed";
+  const mapEmbedSrc = 'https://maps.google.com/maps?q=' + encodeURIComponent('Love kush, vyayamsala ke pass, Pansal Rd, Jawahar Nagar, Labour Colony, Bhilwara, Rajasthan 311001') + '&t=&z=17&ie=UTF-8&iwloc=&output=embed';
 
   const cleanPhone = phonePrimary.replace(/\D/g, '');
 

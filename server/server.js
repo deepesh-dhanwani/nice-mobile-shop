@@ -185,10 +185,10 @@ const defaultRepairs = [
 ];
 
 const defaultSettings = {
-  shop_name: 'Nice Mobile Shop',
+  shop_name: 'Nice Mobile Bhilwara',
   owner_name: 'Vijay Chandak',
-  phone_primary: '094144 44908',
-  phone_secondary: '88905 21023',
+  phone_primary: '88905 21023',
+  phone_secondary: '094144 44908',
   address: 'Love Kush Vyayamshala Ke Pass, Pansal Rd, Jawahar Nagar, Labour Colony, Bhilwara, Rajasthan 311001',
   maps_url: 'https://maps.google.com/maps?q=Nice+Mobile+Shop+Pansal+Road+Bhilwara',
   timing: '9:00 AM - 9:00 PM (Monday to Saturday)',

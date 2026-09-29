@@ -27,7 +27,7 @@ export default function LocationAndContact({ shopInfo }) {
       <div className="section-header">
         <span className="sub-title"><MapPin size={14} /> Visit Our Store</span>
         <h2>Shop Location & Contact Details</h2>
-        <p>Drop by Nice Mobile Shop at Pansal Road, Bhilwara for fast device repairs, accessories purchase, or E-Mitra services.</p>
+        <p>Drop by Nice Mobile Bhilwara at Pansal Road, Bhilwara for fast device repairs, accessories purchase, or E-Mitra services.</p>
       </div>
 
       <div className="location-grid">
@@ -36,7 +36,7 @@ export default function LocationAndContact({ shopInfo }) {
           <div className="card-badge badge-cyan">
             <Store size={14} /> MAIN BRANCH
           </div>
-          <h3>Nice Mobile Shop</h3>
+          <h3>Nice Mobile Bhilwara</h3>
           <p className="owner-subtitle"><User size={14} /> Owner: <strong>{ownerName}</strong></p>
 
           <div className="contact-items-stack">
@@ -94,7 +94,7 @@ export default function LocationAndContact({ shopInfo }) {
         {/* Right Embedded Google Map */}
         <div className="glass-card map-frame-card">
           <iframe 
-            title="Nice Mobile Shop Google Map Location"
+            title="Nice Mobile Bhilwara Google Map Location"
             src={mapEmbedSrc}
             width="100%" 
             height="100%" 

@@ -59,7 +59,7 @@ export default function ProductCatalog({
       <div className="section-header">
         <span className="sub-title"><Sparkles size={14} /> Wholesale & Retail Inventory</span>
         <h2>Shop Mobile Accessories & Mobiles</h2>
-        <p>Explore original smartphones, fast chargers, tempered glass, back covers, and computer accessories directly from Nice Mobile Shop Bhilwara.</p>
+        <p>Explore original smartphones, fast chargers, tempered glass, back covers, and computer accessories directly from Nice Mobile Bhilwara.</p>
       </div>
 
       {/* Category Pills Slider */}
@@ -122,7 +122,7 @@ export default function ProductCatalog({
             const currentPrice = product.discount_price || product.price;
             const originalPrice = product.discount_price ? product.price : null;
             const discountPercent = originalPrice ? Math.round(((originalPrice - currentPrice) / originalPrice) * 100) : 0;
-            const waText = encodeURIComponent(`Hello Vijay Ji, I want to inquire/buy: ${product.title} (Price: ₹${currentPrice}). Is this available at Nice Mobile Shop?`);
+            const waText = encodeURIComponent(`Hello Vijay Ji, I want to inquire/buy: ${product.title} (Price: ₹${currentPrice}). Is this available at Nice Mobile Bhilwara?`);
             const waLink = `https://wa.me/91${cleanPhone}?text=${waText}`;
 
             return (

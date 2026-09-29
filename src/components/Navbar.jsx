@@ -25,7 +25,7 @@ export default function Navbar({
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const phonePrimary = shopInfo?.phone_primary || '094144 44908';
-  const announcement = shopInfo?.banner_announcement || '🔥 Special Offer: Free Tempered Glass & Cover with Every Mobile Repair! Visit Nice Mobile Shop Bhilwara today.';
+  const announcement = shopInfo?.banner_announcement || '🔥 Special Offer: Free Tempered Glass & Cover with Every Mobile Repair! Visit Nice Mobile Bhilwara today.';
 
   const handleNavClick = (sectionId) => {
     setActiveSection(sectionId);
@@ -53,12 +53,12 @@ export default function Navbar({
           {/* Logo & Branding */}
           <div className="logo-brand" onClick={() => handleNavClick('hero')}>
             <img 
-              src="/logo.png" 
+              src={shopInfo?.logo_url || '/logo.png'} 
               alt="Nice Mobile Bhilwara Logo" 
               className="brand-logo-img" 
             />
             <div className="logo-text">
-              <span className="brand-title">NICE <span className="brand-highlight">MOBILE</span></span>
+              <span className="brand-title">{shopInfo?.shop_name ? shopInfo.shop_name.toUpperCase() : 'NICE MOBILE BHILWARA'}</span>
               <span className="brand-sub">BHILWARA • Repair & Wholesale Accessories</span>
             </div>
           </div>

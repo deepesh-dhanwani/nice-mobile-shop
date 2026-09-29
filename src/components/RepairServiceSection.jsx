@@ -199,7 +199,7 @@ export default function RepairServiceSection({
                   <Wrench size={28} className="header-icon" />
                   <div>
                     <h3>Book Mobile & Laptop Repair</h3>
-                    <p>Fill in your device details to open a digital Job Card at Nice Mobile Shop.</p>
+                    <p>Fill in your device details to open a digital Job Card at Nice Mobile Bhilwara.</p>
                   </div>
                 </div>
 
@@ -300,7 +300,7 @@ export default function RepairServiceSection({
                 <div className="next-steps-list">
                   <p><strong>Next Steps:</strong></p>
                   <ol>
-                    <li>Bring your device to <strong>Nice Mobile Shop</strong> at Pansal Road, Bhilwara.</li>
+                    <li>Bring your device to <strong>Nice Mobile Bhilwara</strong> at Pansal Road, Bhilwara.</li>
                     <li>Show this Repair Code (<strong>{bookingResult.repair_code}</strong>) to shop owner <strong>Vijay Chandak</strong>.</li>
                     <li>Track live repair progress online anytime!</li>
                   </ol>

@@ -85,12 +85,12 @@ export default function Hero({ onOpenRepairModal, onScrollToProducts, shopInfo }
           <div className="glass-card store-card">
             <div className="store-card-header">
               <img 
-                src="/logo.png" 
+                src={shopInfo?.logo_url || '/logo.png'} 
                 alt="Nice Mobile Bhilwara Logo" 
                 className="hero-logo-img" 
               />
               <div className="store-card-title">
-                <h3>Nice Mobile Shop</h3>
+                <h3>Nice Mobile Bhilwara</h3>
                 <span className="owner-tag">Prop: {ownerName}</span>
               </div>
               <span className="live-status-pill">

@@ -20,7 +20,7 @@ export default function ProductDetailModal({ product, onClose, onAddToCart, shop
   };
 
   const cleanPhone = shopPhone.replace(/\D/g, '');
-  const waText = encodeURIComponent(`Hello Vijay Ji (Nice Mobile Shop), I am interested in buying: ${product.title} (Price: ₹${currentPrice}). Is it available at your Bhilwara shop?`);
+  const waText = encodeURIComponent(`Hello Vijay Ji (Nice Mobile Bhilwara), I am interested in buying: ${product.title} (Price: ₹${currentPrice}). Is it available at Nice Mobile Bhilwara?`);
   const waLink = `https://wa.me/91${cleanPhone}?text=${waText}`;
 
   return (

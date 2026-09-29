@@ -19,10 +19,10 @@ export default function App() {
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
   const [shopInfo, setShopInfo] = useState({
-    shop_name: 'Nice Mobile Shop',
+    shop_name: 'Nice Mobile Bhilwara',
     owner_name: 'Vijay Chandak',
-    phone_primary: '094144 44908',
-    phone_secondary: '88905 21023',
+    phone_primary: '88905 21023',
+    phone_secondary: '094144 44908',
     address: 'Love Kush Vyayamshala Ke Pass, Pansal Rd, Jawahar Nagar, Labour Colony, Bhilwara, Rajasthan 311001',
     timing: '9:00 AM - 9:00 PM (Monday to Saturday)'
   });
@@ -202,8 +202,8 @@ export default function App() {
       <footer className="footer-container">
         <div className="footer-content">
           <div className="footer-brand">
-            <img src="/logo.png" alt="Nice Mobile Bhilwara Logo" className="footer-logo-img" />
-            <h3>NICE MOBILE BHILWARA</h3>
+            <img src={shopInfo.logo_url || '/logo.png'} alt="Nice Mobile Bhilwara Logo" className="footer-logo-img" />
+            <h3>{(shopInfo.shop_name || 'Nice Mobile Bhilwara').toUpperCase()}</h3>
             <p>Owned & Operated by <strong>Vijay Chandak</strong></p>
             <p className="footer-addr"><MapPin size={14} /> Love Kush Vyayamshala Ke Pass, Pansal Rd, Labour Colony, Bhilwara</p>
           </div>
@@ -226,7 +226,7 @@ export default function App() {
         </div>
 
         <div className="footer-bottom">
-          <p>© 2026 Nice Mobile Shop Bhilwara. All rights reserved.</p>
+          <p>© 2026 Nice Mobile Bhilwara. All rights reserved. | Owner: Vijay Chandak</p>
         </div>
       </footer>
 

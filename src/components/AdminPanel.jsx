@@ -354,8 +354,8 @@ export default function AdminPanel({ onBackToStore, onRefreshData, categories, p
             </button>
 
             <div className="login-brand-header">
-              <img src="/logo.png" alt="Nice Mobile Bhilwara Logo" className="login-logo-img" />
-              <h2>Nice Mobile Shop Admin Portal</h2>
+              <img src={shopInfo?.logo_url || '/logo.png'} alt="Nice Mobile Bhilwara Logo" className="login-logo-img" />
+              <h2>Nice Mobile Bhilwara Admin Portal</h2>
               <p>Management System for Vijay Chandak (Bhilwara)</p>
             </div>
 
@@ -405,9 +405,9 @@ export default function AdminPanel({ onBackToStore, onRefreshData, categories, p
                 <ArrowLeft size={16} /> Customer Storefront
               </button>
               <span className="divider">|</span>
-              <img src="/logo.png" alt="Nice Mobile Bhilwara Logo" className="admin-top-logo" />
+              <img src={shopInfo?.logo_url || '/logo.png'} alt="Nice Mobile Bhilwara Logo" className="admin-top-logo" />
               <div className="admin-title-text">
-                <h1>NICE MOBILE SHOP <span className="admin-tag">ADMIN PORTAL</span></h1>
+                <h1>NICE MOBILE BHILWARA <span className="admin-tag">ADMIN PORTAL</span></h1>
                 <span className="admin-subtitle">Bhilwara • Owner: {adminUser?.name || 'Vijay Chandak'}</span>
               </div>
             </div>
@@ -855,6 +855,25 @@ export default function AdminPanel({ onBackToStore, onRefreshData, categories, p
                           value={settingsForm.shop_name || ''}
                           onChange={(e) => setSettingsForm({ ...settingsForm, shop_name: e.target.value })}
                         />
+                      </div>
+
+                      <div className="form-group">
+                        <label>Shop Logo URL (paste image link)</label>
+                        <input 
+                          type="text" className="custom-input"
+                          placeholder="https://example.com/your-logo.png"
+                          value={settingsForm.logo_url || ''}
+                          onChange={(e) => setSettingsForm({ ...settingsForm, logo_url: e.target.value })}
+                        />
+                        <div className="logo-preview-box">
+                          <span className="preview-label">Logo Preview:</span>
+                          <img 
+                            src={settingsForm.logo_url || '/logo.png'} 
+                            alt="Logo Preview" 
+                            className="logo-preview-img"
+                            onError={(e) => { e.target.src = '/logo.png'; }}
+                          />
+                        </div>
                       </div>
 
                       <div className="form-group">
@@ -1857,6 +1876,33 @@ export default function AdminPanel({ onBackToStore, onRefreshData, categories, p
         @media (max-width: 992px) {
           .stats-row { grid-template-columns: repeat(2, 1fr); }
           .overview-grid, .settings-grid-layout { grid-template-columns: 1fr; }
+        }
+
+        .logo-preview-box {
+          margin-top: 10px;
+          display: flex;
+          align-items: center;
+          gap: 14px;
+          padding: 12px 16px;
+          background: rgba(255, 255, 255, 0.04);
+          border: 1px dashed rgba(255, 255, 255, 0.15);
+          border-radius: 10px;
+        }
+
+        .preview-label {
+          font-size: 0.82rem;
+          color: var(--text-muted);
+          font-weight: 700;
+          white-space: nowrap;
+        }
+
+        .logo-preview-img {
+          height: 56px;
+          max-width: 180px;
+          object-fit: contain;
+          border-radius: 8px;
+          background: #FFF;
+          padding: 4px 10px;
         }
       `}</style>
     </div>

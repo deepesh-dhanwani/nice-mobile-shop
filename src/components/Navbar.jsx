@@ -38,12 +38,16 @@ export default function Navbar({
 
   return (
     <header className="sticky-header">
-      {/* Top Announcement Ticker */}
+      {/* Top Announcement Ticker - Continuous Radio / Breaking Notice Marquee */}
       <div className="ticker-banner">
-        <div className="ticker-content">
-          <span>{announcement}</span>
-          <span className="divider">•</span>
-          <span>Call Shop Owner Vijay Chandak: <strong>{phonePrimary}</strong></span>
+        <div className="ticker-badge">
+          <span className="live-dot"></span> NOTICE
+        </div>
+        <div className="ticker-track-wrapper">
+          <div className="ticker-track">
+            <span className="ticker-text">{announcement} • 📞 Call Vijay Ji: <strong>{phonePrimary}</strong> • 📍 Love Kush Vyayamshala Ke Pass, Pansal Rd, Bhilwara • ⚡ Mobile &amp; Laptop Repairing Done in 30 Mins!</span>
+            <span className="ticker-text" aria-hidden="true">{announcement} • 📞 Call Vijay Ji: <strong>{phonePrimary}</strong> • 📍 Love Kush Vyayamshala Ke Pass, Pansal Rd, Bhilwara • ⚡ Mobile &amp; Laptop Repairing Done in 30 Mins!</span>
+          </div>
         </div>
       </div>
 

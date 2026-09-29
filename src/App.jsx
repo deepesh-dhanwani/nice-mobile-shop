@@ -9,6 +9,7 @@ import CartDrawer from './components/CartDrawer';
 import LocationAndContact from './components/LocationAndContact';
 import AdminPanel from './components/AdminPanel';
 import GlitterCursor from './components/GlitterCursor';
+import DynamicWidgets from './components/DynamicWidgets';
 import { MapPin } from 'lucide-react';
 
 export default function App() {
@@ -232,6 +233,9 @@ export default function App() {
         onClearCart={handleClearCart}
         shopPhone={shopInfo.phone_primary}
       />
+
+      {/* Dynamic Floating Contacts Dock & Live Activity Ticker */}
+      <DynamicWidgets shopPhone={shopInfo.phone_primary} />
 
       {/* Footer */}
       <footer className="footer-container">
